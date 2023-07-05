@@ -4,7 +4,7 @@ from time import sleep
 from classes import Banco, Cliente, ContaCorrente, ContaPoupanca
 from funcoes import clean_console, continuar, definindo_opcao
 
-# Informções pessoais
+
 nome_cliente = input('Insira o seu nome: ').strip().title()
 idade_cliente = None
 while not isinstance(idade_cliente, int):
@@ -15,12 +15,11 @@ cliente = Cliente(nome_cliente, idade_cliente)
 sleep(0.5)
 
 print()
-# Banco variáveis
+
 banco_python_agencias = ['0256', '0136', '1654', '0475']
 dev_banco_agencias = ['1426', '0075', '0987', '1541']
 poo_banco_agencias = ['0045', '0068', '1412', '0698']
 
-# Escolhendo Banco
 print('Escolha um banco para se cadastrar:')
 print('[1] Banco do Python')
 print('[2] Dev Banco')
@@ -31,7 +30,6 @@ opcao_banco = definindo_opcao(banco_opcoes)
 
 print()
 if opcao_banco == '1':
-    # Banco Python
     banco = Banco('Banco do Python', banco_python_agencias)
     print('Agora, escolha a agência onde deseja se cadastrar: ')
     print(*banco_python_agencias)
@@ -39,7 +37,6 @@ if opcao_banco == '1':
     agencia = definindo_opcao(banco_python_agencias)
 
 elif opcao_banco == '2':
-    # Dev Banco
     banco = Banco('Dev Banco', dev_banco_agencias)
     print('Agora, escolha a agência onde deseja se cadastrar: ')
     print(*dev_banco_agencias)
@@ -47,7 +44,6 @@ elif opcao_banco == '2':
     agencia = definindo_opcao(dev_banco_agencias)
 
 else:
-    # POO Banco
     banco = Banco('POO Banco', poo_banco_agencias)
     print('Agora, escolha a agência onde deseja se cadastrar: ')
     print(*poo_banco_agencias)
@@ -55,7 +51,6 @@ else:
     agencia = definindo_opcao(poo_banco_agencias)
 
 print()
-# Escolher o tipo de conta
 print('Escolha o tipo de conta que deseja criar:')
 print('[1] Conta Poupança')
 print('[2] Conta Corrente')
